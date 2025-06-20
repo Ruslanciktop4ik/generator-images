@@ -62,6 +62,9 @@ def save_images_from_base64(images_base64):
         f.write(base64.b64decode(images_base64[0]))
     print(f"Изображение сохранено как {filename}")
     return filename
+@bot.message_handler(commands=['help'])
+def welcome(message):
+    bot.send_message(message.chat.id, "Вот как пользоваться ботом: Пишешь команду /start а после того как бот ответил пишите промпт")
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
